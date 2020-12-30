@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Gambar ke Text</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+    <div class="item">
+        <h1>Result</h1>
+        <img src="{{filename}}" alt="image" class="image-object">
+        <textarea class="caption" id="generatedText" name="generatedText" rows="4" cols="50"> {{ text }}</textarea>
+        <div class="css-lrgl0c copy">
+            <div class="css-tkevr6">
+                <a class="css-gzwy0x" id="copy" style="cursor:pointer">Copy</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $("#copy").click(function(){
+        $("#generatedText").select();
+        document.execCommand('copy');
+    });
+
+</script>
+</html>

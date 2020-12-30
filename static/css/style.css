@@ -1,0 +1,90 @@
+body {
+    text-align: center;
+    font-family: Comfortaa, sans-serif;
+    color: #000;
+    padding: 42px;
+}
+
+.logo-app {
+    width: 180px;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 42px;
+}
+
+.slogan {
+    font-weight: 400;
+    font-size: 34px;
+    margin-top: 0px;
+}
+
+.css-lrgl0c {
+    background-color: #8bd3dd;
+    color: #000;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid black;
+    border-radius: 0.25rem;
+    box-shadow: 0.4rem 0.4rem 0 #222;
+    font-size: 1.125rem;
+    -webkit-text-decoration: none;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    margin-bottom: 16px;
+}
+
+.css-lrgl0c:hover {
+    transform: translate(0rem, 0.1rem);
+    box-shadow: 0.2rem 0.2rem 0 #222;
+    transition: box-shadow .1s, transform .2s;
+}
+
+.css-gzwy0x {
+    text-decoration: none;
+    color: #000;
+}
+
+/* after upload */
+
+.copy {
+    margin-top: 16px;
+    text-align: end !important;
+    background-color: #faae2b;
+}
+
+div.item {
+    display: inline-block;
+    background-color: rgb(242, 247, 245);
+    color: #000;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid black;
+    border-radius: 0.25rem;
+    box-shadow: 0.4rem 0.4rem 0 #222;
+    font-size: 1.125rem;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+img.image-object {
+    width: 320px;
+    border: 2px solid #000;
+}
+
+.caption {
+    margin-top: 32px;
+    display: block;
+}

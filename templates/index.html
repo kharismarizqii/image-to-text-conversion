@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Gambar ke Text</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="item">
+
+        <img class="logo-app" src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+        <h1>tulis.in</h1>
+        <p class="slogan">konversi gambar tulisan</br>biar nggak capek ngetik!</p>
+    
+
+        <form enctype="multipart/form-data" method="POST" >
+            <input class="css-gzwy0x" type="file" id="gambar" name="gambar" accept="image/png, image/jpeg, image/jpg" style="display: none;">
+            <input type="submit" class="css-gzwy0x" id="upload" value="upload" style="display: none;"/>
+        </form>
+
+        <div class="css-lrgl0c">
+            <div class="css-tkevr6">
+                <a class="css-gzwy0x" id="upfile1" style="cursor:pointer">Upload Gambar</a>
+            </div>
+        </div>
+
+        <div class="css-lrgl0c">
+            <div class="css-tkevr6">
+                <a class="css-gzwy0x" id="upfilesubmit" style="cursor:pointer">Upload</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $("#upfile1").click(function () {
+        $("#gambar").trigger('click');
+    });
+    $("#upfilesubmit").click(function (){
+        $("#upload").trigger('click');
+    })
+
+
+    $('#gambar').change(function() {
+       var filename = $('input[type=file]').val().split('\\').pop();
+      console.log(filename,$('#file'));
+        var lastIndex = filename.lastIndexOf("\\");   
+        $('#upfile1').text(filename);
+    });
+</script>
+</html>

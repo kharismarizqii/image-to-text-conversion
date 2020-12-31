@@ -1,6 +1,8 @@
 import os
 import cv2
 import pytesseract
+import string
+import random
 from flask import (Flask, render_template, request, redirect, flash, url_for)
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
@@ -21,6 +23,7 @@ def index():
     if request.method == 'POST':
 
         file = request.files['gambar']
+        alpha = request.form.get('alphabet')
         extension = getExtension(file.filename)
 
         if 'gambar' not in request.files:
@@ -33,14 +36,19 @@ def index():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imageobject.' + extension))
 
-            return redirect(url_for('generate', ext=extension))
+            return redirect(url_for('generate', ext=extension, alp=alpha))
     
     return render_template('index.html')
 
-@app.route('/generate/<ext>')
-def generate(ext):
+@app.route('/generate/<ext>/<alp>')
+def generate(ext,alp):
     filename = 'imageobject.' + ext
+    random_string = ''.join(random.choice(string.ascii_lowercase) for i in range(10))
     full_filename = ('static/upload/'+filename)
     img = cv2.imread(full_filename)
-    text = pytesseract.image_to_string(img, lang='ara') 
-    return render_template('afterupload.html', text=text, filename='/'+full_filename)
+    if alp == 'ara':
+        text = pytesseract.image_to_string(img, lang='ara') 
+    else:
+        text = pytesseract.image_to_string(img) 
+
+    return render_template('afterupload.html', text=text, filename='/'+full_filename+'?'+random_string)

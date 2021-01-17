@@ -1,0 +1,5 @@
+gunicorn
+opencv-python
+pytesseract
+Flask
+Werkzeug

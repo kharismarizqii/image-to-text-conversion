@@ -47,7 +47,7 @@ def generate(ext,alp):
     full_filename = ('static/upload/'+filename)
     img = cv2.imread(full_filename)
     if alp == 'ara':
-        text = pytesseract.image_to_string(img, lang='ara') 
+        text = pytesseract.image_to_string(img, lang='ara')
     else:
         text = pytesseract.image_to_string(img) 
 

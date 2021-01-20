@@ -3,6 +3,7 @@ import cv2
 import pytesseract
 import string
 import random
+from textblob import TextBlob
 from flask import (Flask, render_template, request, redirect, flash, url_for)
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
@@ -50,5 +51,7 @@ def generate(ext,alp):
         text = pytesseract.image_to_string(img, lang='ara')
     else:
         text = pytesseract.image_to_string(img) 
+    textBlb = TextBlob(text)
+    textCorrected = textBlb.correct()
 
-    return render_template('afterupload.html', text=text, filename='/'+full_filename+'?'+random_string)
+    return render_template('afterupload.html', text=textCorrected, filename='/'+full_filename+'?'+random_string)

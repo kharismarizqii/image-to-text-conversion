@@ -8,7 +8,6 @@ from flask import (Flask, render_template, request, redirect, flash, url_for)
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
-
 UPLOAD_FOLDER = os.path.join('static', 'upload')
 ALLOWED_EXTENSION = set(['png','jpeg','jpg'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER

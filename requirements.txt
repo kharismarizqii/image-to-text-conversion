@@ -4,4 +4,4 @@ pytesseract==0.3.7
 Flask==1.1.2
 Werkzeug==0.16.0
 textblob
-tesseract
+tesseract==3.04

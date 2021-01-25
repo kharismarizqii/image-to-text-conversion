@@ -1,7 +1,7 @@
 gunicorn==20.0.4
 opencv-python-headless
-pytesseract==0.3.7
+pytesseract
 Flask==1.1.2
 Werkzeug==0.16.0
 textblob
-tesseract==0.1.3
+tesseract
